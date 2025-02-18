@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gsoft-inc/igloo-ui-tokens.git"
+    "url": "git+https://github.com/workleap/igloo-ui-tokens.git"
   },
   "keywords": [
     "design tokens",
@@ -25,9 +25,9 @@
   "author": "Groupe Officevibe Inc.",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/gsoft-inc/igloo-ui-tokens/issues"
+    "url": "https://github.com/workleap/igloo-ui-tokens/issues"
   },
-  "homepage": "https://github.com/gsoft-inc/igloo-ui-tokens#readme",
+  "homepage": "https://github.com/workleap/igloo-ui-tokens#readme",
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@changesets/cli": "^2.26.0",
