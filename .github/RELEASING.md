@@ -6,4 +6,4 @@
 
 1. Run `pnpm install` to make sure everything is up to date
 2. Run `pnpm version-packages`.
-3. Run `NPM_CONFIG_OTP=PUTANOTPCODEHERE pnpm release`. If the 2FA code times out while publishing, run the command again with a new code, only the packages that were not published will be published.
+3. Run `pnpm release --otp=PUTANOTPCODEHERE`. If the 2FA code times out while publishing, run the command again with a new code, only the packages that were not published will be published.
