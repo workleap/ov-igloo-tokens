@@ -8,28 +8,32 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
-          node-version: 14
-      - run: yarn
-      - run: yarn lint
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
 
   publish:
     needs: lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
-          node-version: 14
-      - run: yarn install
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
 
       - name: Build @igloo-ui/tokens
-        run: yarn build
+        run: pnpm build
 
       - name: Generate your awesome content
-        run: yarn build-storybook
+        run: pnpm build-storybook
 
       - name: Publish generated content to GitHub Pages
         uses: tsunematsu21/actions-publish-gh-pages@v1.0.1

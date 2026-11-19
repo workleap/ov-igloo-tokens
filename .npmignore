@@ -15,5 +15,6 @@ node_modules
 
 config.json
 build.js
-yarn.lock
+pnpm-lock.yaml
+pnpm-workspace.yaml
 yarn-error.log
