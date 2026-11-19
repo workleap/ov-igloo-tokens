@@ -6,13 +6,14 @@
   "style": "dist/variables.css",
   "sass": "dist/_variables.scss",
   "type": "module",
+  "packageManager": "pnpm@12.20.0",
   "scripts": {
     "build": "node ./build.js",
     "clean": "rm -rf dist",
     "lint": "eslint *.js",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "yarn build && changeset publish"
+    "release": "pnpm build && changeset publish"
   },
   "repository": {
     "type": "git",
