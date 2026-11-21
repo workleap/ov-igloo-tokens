@@ -9,9 +9,9 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 26
           cache: pnpm
@@ -26,19 +26,19 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
       - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
       # No dependency cache here: this job holds the npm token, and Actions caches on
       # main can be written by other jobs (cache poisoning). Install fresh instead.
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 26
           registry-url: https://registry.npmjs.org/
       - run: pnpm install --frozen-lockfile
       - name: Create Release Pull Request or Publish to npm
-        uses: changesets/action@master
+        uses: changesets/action@41adcfa1f4c9a2f03ee74a426a8878a2b8cf7b85 # master
         with:
           publish: pnpm release
         env:
